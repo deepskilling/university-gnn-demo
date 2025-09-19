@@ -7,6 +7,10 @@ This script demonstrates how to improve prediction accuracy by:
 3. Adding task-specific layers
 """
 
+import sys
+import os
+sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'src'))
+
 import numpy as np
 from gcn_numpy_implementation import GCN, normalize_adjacency
 from sklearn.model_selection import train_test_split
@@ -116,7 +120,7 @@ def demonstrate_training_improvements():
     print("="*70)
     
     # Load data
-    university_data = np.load('/Users/rchandran/Library/CloudStorage/OneDrive-DiligentCorporation/RESEARCH/GNN/university_dataset.npy', 
+    university_data = np.load(os.path.join(os.path.dirname(__file__), '..', 'data', 'university_dataset.npy'), 
                              allow_pickle=True).item()
     
     A = university_data['adjacency_matrix']

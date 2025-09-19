@@ -396,7 +396,7 @@ def run_course_recommendation_demo():
     
     # Load university data
     print("📚 Loading University Dataset...")
-    university_data = np.load('/Users/rchandran/Library/CloudStorage/OneDrive-DiligentCorporation/RESEARCH/GNN/university_dataset.npy', 
+    university_data = np.load(os.path.join(os.path.dirname(__file__), '..', 'data', 'university_dataset.npy'), 
                              allow_pickle=True).item()
     
     # Initialize recommendation system

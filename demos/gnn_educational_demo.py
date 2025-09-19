@@ -5,6 +5,10 @@ This demo provides an intuitive understanding of how GNNs work by walking throug
 specific examples with the university graph dataset.
 """
 
+import sys
+import os
+sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'src'))
+
 import numpy as np
 from university_graph_dataset import UniversityGraphDataset
 from gcn_numpy_implementation import GCN, normalize_adjacency
@@ -242,7 +246,7 @@ def educational_walkthrough():
     
     # Load data
     print("\n📚 Loading university dataset...")
-    university_data = np.load('/Users/rchandran/Library/CloudStorage/OneDrive-DiligentCorporation/RESEARCH/GNN/university_dataset.npy', allow_pickle=True).item()
+    university_data = np.load(os.path.join(os.path.dirname(__file__), '..', 'data', 'university_dataset.npy'), allow_pickle=True).item()
     
     # Step 1: Understand the graph
     example_student, student_courses = explain_graph_structure(university_data)

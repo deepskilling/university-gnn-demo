@@ -5,6 +5,10 @@ This module demonstrates various prediction tasks that can be performed
 using the learned node embeddings from our university GCN model.
 """
 
+import sys
+import os
+sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'src'))
+
 import numpy as np
 from sklearn.linear_model import LogisticRegression
 from sklearn.ensemble import RandomForestClassifier
@@ -305,7 +309,7 @@ def run_all_prediction_tasks():
     
     # Load data and run GCN
     print("📚 Loading data and computing embeddings...")
-    university_data = np.load('/Users/rchandran/Library/CloudStorage/OneDrive-DiligentCorporation/RESEARCH/GNN/university_dataset.npy', 
+    university_data = np.load(os.path.join(os.path.dirname(__file__), '..', 'data', 'university_dataset.npy'), 
                              allow_pickle=True).item()
     
     A = university_data['adjacency_matrix']

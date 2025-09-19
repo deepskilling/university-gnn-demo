@@ -16,18 +16,40 @@ The GCN learns to create **meaningful embeddings** that capture both individual 
 ## 📁 Project Structure
 
 ```
-GNN/
-├── university_graph_dataset.py      # Dataset creation
-├── gcn_numpy_implementation.py      # Core GCN implementation  
-├── gnn_educational_demo.py          # Detailed educational walkthrough
-├── quick_demo.py                   # Quick highlights demo
-├── prediction_tasks.py             # Comprehensive prediction capabilities
-├── course_recommendation_system.py # Link prediction for course recommendations
-├── focused_recommendation_test.py  # Detailed recommendation analysis
-├── link_prediction_summary.py     # Complete link prediction workflow
-├── university_dataset.npy          # Generated dataset
-├── embedding_visualization.png     # Results visualization
-└── README.md                       # This file
+university-gnn-demo/
+├── README.md                       # Main documentation
+├── requirements.txt                # Python dependencies
+├── LICENSE                         # MIT License
+├── .gitignore                     # Git ignore rules
+│
+├── src/                           # Core implementation
+│   ├── gcn_numpy_implementation.py     # GCN layers and model
+│   ├── university_graph_dataset.py    # Dataset generation
+│   └── course_recommendation_system.py # Link prediction system
+│
+├── demos/                         # Educational demonstrations
+│   ├── gnn_educational_demo.py         # Step-by-step walkthrough
+│   ├── quick_demo.py                   # Quick highlights
+│   ├── prediction_tasks.py             # All prediction capabilities
+│   ├── focused_recommendation_test.py  # Detailed analysis
+│   ├── link_prediction_summary.py     # Complete workflow
+│   ├── improving_predictions.py        # Training improvements
+│   └── prediction_summary.py          # Performance summary
+│
+├── data/                          # Generated datasets
+│   └── university_dataset.npy         # Graph data
+│
+├── results/                       # Visualization outputs
+│   ├── embedding_visualization.png     # 2D embeddings
+│   ├── course_recommendation_results.png # Performance charts
+│   └── simple_embedding_viz.png        # Simple visualization
+│
+├── docs/                          # Documentation
+│   ├── GITHUB_SETUP.md                # Setup instructions
+│   └── SECURE_GIT_USAGE.md            # Git security guide
+│
+└── scripts/                       # Utility scripts
+    └── git_with_env.sh                # Git helper (local)
 ```
 
 ## 🔧 Key Concepts Demonstrated
@@ -63,9 +85,14 @@ Where D is the degree matrix and I adds self-loops.
 ### Quick Start
 ```bash
 conda activate graph  # or your preferred environment
-python university_graph_dataset.py    # Generate dataset
-python gcn_numpy_implementation.py    # Run full GCN
-python gnn_educational_demo.py        # Detailed walkthrough
+
+# Generate dataset
+python src/university_graph_dataset.py
+
+# Run core demonstrations
+python src/gcn_numpy_implementation.py    # Core GCN walkthrough
+python demos/gnn_educational_demo.py     # Detailed educational demo
+python demos/quick_demo.py               # Quick highlights
 ```
 
 ### What You'll See
@@ -80,12 +107,12 @@ python gnn_educational_demo.py        # Detailed walkthrough
 ### Link Prediction Demo
 ```bash
 # Comprehensive prediction capabilities
-python prediction_tasks.py           # Shows all 5 prediction types
+python demos/prediction_tasks.py           # Shows all 5 prediction types
 
 # Course recommendation system (Link Prediction)  
-python course_recommendation_system.py  # Complete recommendation demo
-python focused_recommendation_test.py   # Detailed analysis
-python link_prediction_summary.py      # Workflow summary
+python src/course_recommendation_system.py  # Complete recommendation demo
+python demos/focused_recommendation_test.py   # Detailed analysis
+python demos/link_prediction_summary.py      # Workflow summary
 ```
 
 **Link Prediction Results**:

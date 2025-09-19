@@ -360,7 +360,7 @@ def step_by_step_walkthrough(university_data: Dict[str, Any]) -> None:
 if __name__ == "__main__":
     # Load the university dataset
     print("📚 Loading University Dataset...")
-    university_data = np.load('/Users/rchandran/Library/CloudStorage/OneDrive-DiligentCorporation/RESEARCH/GNN/university_dataset.npy', allow_pickle=True).item()
+    university_data = np.load(os.path.join(os.path.dirname(__file__), '..', 'data', 'university_dataset.npy'), allow_pickle=True).item()
     
     # Run the step-by-step walkthrough
     results = step_by_step_walkthrough(university_data)

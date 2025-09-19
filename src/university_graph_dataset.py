@@ -7,6 +7,7 @@ We'll use this as input for our GCN implementation.
 
 import numpy as np
 import random
+import os
 from typing import Dict, List, Tuple, Any
 
 # Set random seeds for reproducibility
@@ -316,8 +317,9 @@ if __name__ == "__main__":
     university_data = dataset_generator.generate_dataset()
     
     # Save the dataset
-    np.save('/Users/rchandran/Library/CloudStorage/OneDrive-DiligentCorporation/RESEARCH/GNN/university_dataset.npy', university_data)
-    print(f"\n💾 Dataset saved to university_dataset.npy")
+    dataset_path = os.path.join(os.path.dirname(__file__), '..', 'data', 'university_dataset.npy')
+    np.save(dataset_path, university_data)
+    print(f"\n💾 Dataset saved to {dataset_path}")
     
     # Display some sample data
     print(f"\n🔍 Sample Data Preview:")

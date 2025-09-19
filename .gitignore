@@ -117,3 +117,5 @@ dmypy.json
 # *.png
 # *.jpg
 # *.pdf
+git_with_env.sh
+run_demos.py

@@ -5,6 +5,10 @@ A concise demonstration of the entire link prediction workflow
 for course recommendation systems using GCNs.
 """
 
+import sys
+import os
+sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'src'))
+
 import numpy as np
 from course_recommendation_system import CourseRecommendationSystem
 
@@ -27,7 +31,7 @@ def demonstrate_complete_link_prediction_workflow():
     print("STEP 1: LOAD GRAPH DATA")
     print("="*50)
     
-    university_data = np.load('/Users/rchandran/Library/CloudStorage/OneDrive-DiligentCorporation/RESEARCH/GNN/university_dataset.npy', 
+    university_data = np.load(os.path.join(os.path.dirname(__file__), '..', 'data', 'university_dataset.npy'), 
                              allow_pickle=True).item()
     
     total_nodes = len(university_data['adjacency_matrix'])

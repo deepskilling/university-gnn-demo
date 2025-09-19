@@ -5,6 +5,10 @@ Create a smaller, more controlled test to better demonstrate
 the link prediction concept with clear examples.
 """
 
+import sys
+import os
+sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'src'))
+
 import numpy as np
 from course_recommendation_system import CourseRecommendationSystem
 from gcn_numpy_implementation import GCN, normalize_adjacency
@@ -17,7 +21,7 @@ def create_focused_test_dataset():
     print("="*80)
     
     # Load the full dataset
-    university_data = np.load('/Users/rchandran/Library/CloudStorage/OneDrive-DiligentCorporation/RESEARCH/GNN/university_dataset.npy', 
+    university_data = np.load(os.path.join(os.path.dirname(__file__), '..', 'data', 'university_dataset.npy'), 
                              allow_pickle=True).item()
     
     # Let's examine specific students and their enrollments
@@ -121,7 +125,7 @@ def test_specific_student_recommendations():
     print("="*80)
     
     # Load data and create recommendation system
-    university_data = np.load('/Users/rchandran/Library/CloudStorage/OneDrive-DiligentCorporation/RESEARCH/GNN/university_dataset.npy', 
+    university_data = np.load(os.path.join(os.path.dirname(__file__), '..', 'data', 'university_dataset.npy'), 
                              allow_pickle=True).item()
     
     rec_system = CourseRecommendationSystem(university_data, test_ratio=0.1)  # Keep most edges for better recommendations

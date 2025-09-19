@@ -5,6 +5,10 @@ A concise demonstration of the key GCN concepts in just a few lines.
 Perfect for a quick understanding of what's happening.
 """
 
+import sys
+import os
+sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'src'))
+
 import numpy as np
 from gcn_numpy_implementation import GCN, normalize_adjacency
 
@@ -16,7 +20,7 @@ def quick_gcn_demo():
     
     # Load pre-generated university dataset
     print("\n1️⃣ Loading dataset...")
-    university_data = np.load('/Users/rchandran/Library/CloudStorage/OneDrive-DiligentCorporation/RESEARCH/GNN/university_dataset.npy', 
+    university_data = np.load(os.path.join(os.path.dirname(__file__), '..', 'data', 'university_dataset.npy'), 
                              allow_pickle=True).item()
     
     A = university_data['adjacency_matrix']  # Graph structure
